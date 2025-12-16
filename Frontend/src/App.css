@@ -1,0 +1,293 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+/* Main content */
+.main-content {
+  flex-grow: 1;
+  padding: 1rem 2rem;
+  transition: margin-left 0.3s ease;
+  margin-left: 70px; /* matches minimized sidebar width */
+}
+
+.sidebar.expanded ~ .main-content {
+  margin-left: 180px; /* smaller expanded width */
+}
+
+/* Login Page */
+.login {
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  width: 350px;
+  height: 450px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.login button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  background: #4facfe;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login button:hover {
+  background: #50ec30;
+}
+
+
+/* Navbar button and link styles */
+.mb-2 .btn {
+  color: #36ca19;
+}
+
+li:hover{
+  border-radius: 5px;
+  background-color: hsla(120, 19%, 81%, 0.82);
+}
+
+
+ /* Header Animation styles */
+  /* remove one @ to display Header animation*/
+ @keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+/* Remove light hover in Bootstrap dropdowns */
+.dropdown-item:hover, 
+.dropdown-item:focus {
+  color: #fff;  
+  text-decoration: none;
+  background-color: #456b6b;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 70px; /* collapsed width */
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.sidebar.expanded {
+  width: 180px; /* minimized expanded width */
+  align-items: flex-start;
+  padding: 1rem 0.5rem; /* small padding to keep toggle visible */
+}
+
+/* Top row: Hamburger + Brand + Toggle */
+.sidebar .top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ensure toggle always visible */
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+/* Hamburger */
+.sidebar .hamburger {
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #6c63ff;
+}
+
+/* Brand */
+.sidebar .brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: #6c63ff;
+  display: none;
+}
+
+.sidebar.expanded .brand {
+  display: inline-block;
+}
+
+/* Toggle button */
+.sidebar .toggle-btn {
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #6c63ff;
+  flex-shrink: 0; /* always visible */
+}
+
+/* Navigation */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #4a4a4a;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.sidebar li:hover {
+  background-color: #f1f0ff;
+  color: #6c63ff;
+}
+
+.sidebar i {
+  font-size: 1.2rem;
+  width: 30px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sidebar span {
+  opacity: 0;
+  visibility: hidden;
+  margin-left: 10px;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.sidebar.expanded span {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tooltip */
+.tooltip-custom {
+  position: fixed;
+  background: #ffffff;
+  color: #6c63ff;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, top 0.2s, left 0.2s;
+  z-index: 200;
+}
+
+.tooltip-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
+  box-shadow: -1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Profile icon */
+.profile-icon {
+  font-size: 2rem;
+  color: #6c63ff;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+  .sidebar.expanded {
+    width: 150px;
+  }
+  .main-content {
+    margin-left: 60px;
+  }
+  .sidebar.expanded ~ .main-content {
+    margin-left: 150px;
+  }
+}
+
+
+/* just for testing*/
+.profile-menu {
+  display: flex; /* Arrange profile icon and dropdown side by side */
+  align-items: center; /* Vertically center both elements */
+}
+
+.profile-icon {
+  cursor: pointer;
+  margin-right: 10px; /* Space between the icon and the dropdown */
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack dropdown items vertically */
+  background-color: #f8f9fa; /* Background for dropdown */
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0; /* Remove default padding */
+  visibility: hidden; /* Hide dropdown by default */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.profile-menu:hover .dropdown {
+  visibility: visible;
+  opacity: 1; /* Show dropdown on hover */
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #007bff;
+  color: white;
+}

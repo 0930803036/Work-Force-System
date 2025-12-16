@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "sequelize-cli": "^6.6.3"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run Backend\" \"npm run Frontend\"",
+    "Backend": "cd Backend && npm start",
+    "Frontend": "cd Frontend && npm run dev"
+  },
+  "dependencies": {
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "socket.io-client": "^4.8.1"
+  }
+}
