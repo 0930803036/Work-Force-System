@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "123",
-    "database": "BL_Management_System",
+    "database": "bl_management_system",
     "host": "localhost",
     "port": 5432,
     "dialect": "postgres"
