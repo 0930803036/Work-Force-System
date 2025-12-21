@@ -10,13 +10,11 @@ const PORT = process.env.PORT || 7000;
 /* =======================
    CORS (PUT THIS FIRST)
    ======================= */
-app.use(
-  cors({
-    origin: "*", // TEMP – allow all (lock to Vercel later)
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true
-  })
-);
+app.use(cors({
+  origin: 'https://work-force-system.vercel.app',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  credentials: true
+}));
 
 /* =======================
    MIDDLEWARES

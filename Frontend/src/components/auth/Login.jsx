@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+const API_URL = process.env.REACT_APP_API_URL;
 
 export function Login({ setIsLoggedIn, setRole, setDelegatedRole }) {
   const [form, setForm] = useState({ userId: "", password: "" });
@@ -34,7 +34,7 @@ export function Login({ setIsLoggedIn, setRole, setDelegatedRole }) {
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:7000/api/user/login", {
+      const res = await fetch("API_URL/api/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
