@@ -51,6 +51,9 @@ const requestRoute = require("./Routes/request_routes");
 app.use("/api/requests", requestRoute);
 
 /** Shift route */
+const seedRenderDB = require("./Routes/seedRenderDB");
+app.use("/", seedRenderDB);
+
 const shiftRoute = require("./Routes/shift_routes");
 app.use("/api/shifts", shiftRoute);
 

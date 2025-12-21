@@ -7,13 +7,13 @@ module.exports = {
 
     await queryInterface.bulkInsert('Users', [
       {
-        userId: 15,
+        userId: 1,
         firstName: 'Daniel',
         middleName: 'T',
         lastName: 'Tebkew',
         email: 'daniel@example.com',
         phone: 911234567,
-        role: 'supervisor',
+        role: 'admin',
         delegatedRole: null,
         channel: 'Main',
         skill: 'Management',
