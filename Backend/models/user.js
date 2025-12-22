@@ -58,10 +58,9 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: 'User',
 
-      // 🔴 CRITICAL FIXES
-      tableName: 'Users',     // exact DB table name (case-sensitive)
-      schema: 'public',       // explicit schema
-      freezeTableName: true,  // prevent Sequelize guessing
+      // ✅ CORRECT for your DB
+      tableName: 'Users',
+      freezeTableName: true,
 
       timestamps: true,
     }
