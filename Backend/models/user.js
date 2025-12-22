@@ -59,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'User',
 
       // ✅ CORRECT for your DB
-      tableName: 'Users',
+      tableName: "Users",
       freezeTableName: true,
 
       timestamps: true,
